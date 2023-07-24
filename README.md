@@ -11,3 +11,5 @@ def find_max(blobs):
             max_blob=blob
             max_size = blob[2]*blob[3]
     return max_blob
+#左右电机方向应该是相反的，一正一负。但距离PID应该是相同的
+#EDGI训练模型能返回识别物体特征点的数量和个数，但无法返回大小，如何是识别相同大小的物体的话，EDGI识别效果更好，但如果是一大一小，还是YOLOV5比较好
