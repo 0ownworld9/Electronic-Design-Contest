@@ -15,3 +15,9 @@ def find_max(blobs):
 #EDGI训练模型能返回识别物体特征点的数量和个数，但无法返回大小，如何是识别相同大小的物体的话，EDGI识别效果更好，但如果是一大一小，还是YOLOV5比较好
 #标志识别参考官方网页
 ########使用openmv自带摄像头采集训练集图片时要选中class.c才能够采集图片
+#sensor模块基础配置
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565) # or GRAYSCALE...灰度或者彩色图片
+sensor.set_framesize(sensor.QVGA) # or QQVGA...实际分辨率
+sensor.skip_frames(time = 2000) #跳帧保证图片处理起来比较流畅
+clock = time.clock()
