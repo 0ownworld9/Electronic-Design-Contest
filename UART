@@ -1,0 +1,20 @@
+import time,pyb
+from pyb import UART
+led1=pyb.LED(1)
+led2=pyb.LED(2)
+uart = UART(3, 115200)
+uart.init(115200,8,None,1)
+uart.write("Helloworld\r\n")
+while(True):
+	uart.write("1\r\n")
+	led1.on()
+	time.sleep_ms(2000)
+	uart.write("0\r\n")
+	led2.on()
+	time.sleep_ms(2000)
+
+	'''	if uart.any():
+		led2.on()
+		data = uart.read()
+		uart.write(data)
+	'''
